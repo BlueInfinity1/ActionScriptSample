@@ -7,7 +7,7 @@ package
 	public class RotatedRectangle
 	{
 		public var rect: Rectangle;
-		public var angle: Number; //in radians!
+		public var angle: Number; //in radians
 		public var origin: Point;
 		private var intersectInfo : IntersectInfo = new IntersectInfo();
 		
@@ -43,14 +43,11 @@ package
 			//trace("TL: " + String(UpperLeftCorner()) + "TR: " + String(UpperRightCorner()));
 			//trace("Hero: TL: " + String(rect.UpperLeftCorner()) + " TR: " + String(rect.UpperRightCorner()));
 			
-			//for (var i:int = 0; i < rectangleAxis.length; i++ )
-			//trace(String(i) + " "+String(rectangleAxis[i]));
-			
 			//Cycle through all of the Axis we need to check. If a collision does not occur
 			//on ALL of the Axis, then a collision is NOT occurring. We can then exit out 
 			//immediately and notify the calling function that no collision was detected. If
 			//a collision DOES occur on ALL of the Axis, then there is a collision occurring
-			//between the rotated rectangles. We know this to be true by the Seperating Axis Theorem
+			//between the rotated rectangles. We know this to be true by the Separating Axis Theorem
 			//Keep track of the axis with smallest depth of overlap and return that for collision
 			//response purposes.
 			var minAxis : Point;
@@ -181,7 +178,6 @@ package
 		}
 		public static function arrayMin (array: Array):Number
 		{
-			//should throw an error with null arrays
 			var min:Number = array[0];
 			for (var i:int = 1; i < array.length; i++)
 			{
@@ -192,7 +188,6 @@ package
 		}
 		public static function arrayMax (array: Array):Number
 		{
-			//should throw an error with null arrays
 			var max:Number = array[0];
 			for (var i:int = 1; i < array.length; i++)
 			{
@@ -201,6 +196,5 @@ package
 			}
 			return max;
 		}
-
 	}
 }
